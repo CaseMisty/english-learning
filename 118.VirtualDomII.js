@@ -3,7 +3,7 @@
 // I'm sharing my screen now. Is it visible to everyone?  or Can everyone see it?
 // Regarding this problem, we basically need to complete two functions.
 // First, we have `createElement`, which generates our custom `node` element.
-// Then, we have `render`, which takes our custom `node` and returns a `DOM` node.
+// Then, we have `render`, which takes our custom `node` and returns a `DOM` node. okay, lets do it.
 // Create a function that constructs a custom Node called MyElement, which is a simplified version of a React element node.
 const createElement = (type, props, ...children) => {
   return {
