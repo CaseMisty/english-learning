@@ -7,17 +7,16 @@ const createElement = (type, props, ...children) => {
     type,
     // Not doing too much in this function, just accepting type, props, children, and other props, and returning them as an object.
     props: {
-      props,
-      // It is worth noting that, by convention, the 'children' property is located within the 'props' object.
-      children: [...children],
+      // It is worth noting that, by react convention, the 'children' property is located within the 'props' object.
+      children,
+      ...props,
     },
   };
 };
 
 // Following that, rename createElement as h.
 const h = createElement;
-
-// Let me execute it to see if the generated virtual DOM matches the expected result. Okay, the result is as intended
+//  For the convenience of execute it to see if the generated virtual DOM matches the expected result. Okay, the result is as intended
 const node = h(
   "div",
   {},
@@ -45,24 +44,17 @@ const render = (myElement) => {
   }
 
   // Deconstruct myElement and assign it to type and props. Extract the props and children as variables.
-  const {
-    type,
-    props: { children, ...props },
-  } = myElement;
-
+  const {  type, props: { children, ...props }  } = myElement;
   // The type here represents the HTML tag name, so let's create it using the document.createElement method.
   const element = document.createElement(type);
   // and this will be a recursive  method, to prevent omissions /əˈmɪʃ(ə)n/, return the element here, this serves as the base case for terminating the recursion.
 
   // In addition, we have to iterate through the props object with Object.entries and set each property to the element.
   for (const [name, value] of Object.entries(props)) {
-    // We need to handle the className attribute independently because it's not called that in DOM elements.
-    if (name === "className") {
-      element.setAttribute("class", value);
-    } else {
-      // Set other attributes to the element.
-      element.setAttribute(name, value);
-    }
+    // In this for loop we set all attributes in this element. 
+    // and we need to handle the className attribute independently because it's not called that in DOM elements.
+    // . so use a ternary/ˈtɜːnərɪ/ operator here. if equal to classname, set the attribute name as class, if not directly use this name
+    element.setAttribute(name === "className" ? "class" : name, value);
   }
   // All asttributes of element have been set. As we proceed, we should handle children elements.
   // Here's the trick: the DOM.append method appends the passed element to the end of the element.
