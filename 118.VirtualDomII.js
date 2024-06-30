@@ -50,7 +50,7 @@ const render = (myElement) => {
   const {  type, props: { children, ...props }  } = myElement;
   // The type here represents the HTML tag name, so let's create it using the document.createElement method.
   const element = document.createElement(type);
-  // and this will be a recursive  method, to prevent omissions /əˈmɪʃ(ə)n/, return the element here, this serves as the base case for terminating the recursion.
+  // and this will be a recursive  method, to prevent omissions /əˈmɪʃ(ə)n/, return the element here, this serves as the base case for terminating /ˈtɜːrməˌnet/the recursion /rɪˈkɜːrʒn/.
 
   // In addition, we have to iterate through the props object with Object.entries and set each property to the element.
   for (const [name, value] of Object.entries(props)) {
