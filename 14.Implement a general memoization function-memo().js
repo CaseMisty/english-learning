@@ -1,7 +1,9 @@
 /*
-this question is kinda easy. we can use a map to cache the results. 
+Today, we're going to go over two problems,  decode message and implement a general momoization function. 
+Let's start with the easy one.  implement a memo.
+Basically, this problem is kinda easy. we can use a map to cache the results. 
 The biggest challenge lies in how to reasonably calculate a key, but this is not an issue in this case, 
-as the function resolver for calculate the key is passed in as a parameter.
+as this problem provides a resolver function for calculate the key is passed in as a parameter.
 */
 function memo(func, resolver) {
   // at the beginning, create a map to cache the results of function calls. This will be a closure value.
