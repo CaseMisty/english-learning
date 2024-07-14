@@ -14,7 +14,7 @@ const Direction = {
 };
 
 function decode(message) {
-  // First, handle the boundary conditions.
+  // First, handle the edge case. // boundary conditions.
   if (!message || message?.length === 0) {
     return '';
   }
@@ -25,6 +25,7 @@ function decode(message) {
   const rows = message.length;
 
   // follwing that, set the initial values for the coordinates, and the initial result string;
+  // Don't use x and y as names because here they represent coordinates in a 2D array, and x and y are reversed, which can cause confusion.
   let res = '';
   let col = 0;
   let row = 0;
