@@ -24,3 +24,4 @@ function memo(func, resolver) {
     }
   }
 }
+// the code is done. Let me check it and then submit it.
