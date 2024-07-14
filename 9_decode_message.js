@@ -2,7 +2,7 @@
 today we are going to solve this problem. we are given a 2-d array of characters,and we need to extract a string
 from it. problem requirement states that we start at the top left, Let's assume this is a chessboard. 
 We will move diagonally each time, meaning we move one square to the right bottom each time, 
-and move up to the right if we reach the bottom row. This process is repeateded until we reach the rightmost column, 
+and move up to the right up if we reach the bottom row. This process is repeateded until we reach the rightmost column, 
 then we'll move out of the board, return the resulting string, and the function terminates.
 In short, the path is a zigzag line, right?
 */
