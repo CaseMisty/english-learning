@@ -1,4 +1,4 @@
-// 
+// today I'm going to get down to this question.
 // This class allows multiple subscribe calls for the same eventName, and it can return a release method.
 class EventEmitter {
 
