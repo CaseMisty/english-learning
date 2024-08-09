@@ -1,0 +1,17 @@
+function range(from, to) {
+  let curr = from;
+  return {
+    [Symbol.iterator]() {
+      return {
+        next() {
+          if (curr <= to) {
+            const res = { value: curr++, done: false };
+            return res;
+          } else {
+            return { done: true }
+          }
+        }
+      }
+    }
+  }
+}
