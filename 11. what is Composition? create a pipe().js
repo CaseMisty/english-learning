@@ -9,18 +9,14 @@ The accumulator acc starts out as value, and is replaced by the return value of 
 Finally, the output of the last function is returned as the output of the new function.
 */
 function pipe(funcs) {
-	return function (value) {
-		return funcs.reduce((res, func) => {
-			return func(res);
-		}, value)
-	}
-}
+  return function (value) {
+    return funcs.reduce((res, func) => {
+      return func(res);
+    }, value)
+  }
+};
 
 const times = (y) =>  (x) => x * y
 const plus = (y) => (x) => x + y
 const subtract = (y) =>  (x) => x - y
 const divide = (y) => (x) => x / y
-console.log(pipe([
-  times(2),
-  times(3)
-]))
