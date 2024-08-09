@@ -1,5 +1,4 @@
 function html(strs, ...args) {
-  
   let res = '';
   strs.forEach((item, i) => {
     res+=item;
@@ -7,7 +6,6 @@ function html(strs, ...args) {
   })
   return res;
 }
-
 
 // render the result from html() into the container
 function render(result, container) {
